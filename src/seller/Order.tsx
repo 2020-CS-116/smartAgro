@@ -1,12 +1,53 @@
-import { StyleSheet, Text, View,SafeAreaView,ScrollView } from 'react-native'
-import React from 'react'
+import { StyleSheet, Text, View,SafeAreaView,FlatList,TouchableOpacity } from 'react-native'
+import React,{useState} from 'react'
 import { RouteProp, NavigationProp } from '@react-navigation/native';
 import MyHeader from '../components/TabNavigation/MyHeader'
 type ProductScreenProps = {
   route: RouteProp<Record<string, object | undefined>, string>;
   navigation: NavigationProp<any>;
 };
-const  Sales_Reports = ({ route, navigation }: ProductScreenProps) =>  {
+type ItemData = {
+  id: string;
+  title: string;
+};
+
+const DATA: ItemData[] = [
+ 
+];
+
+type ItemProps = {
+  item: ItemData;
+  onPress: () => void;
+  backgroundColor: string;
+  textColor: string;
+};
+const Item = ({item, onPress, backgroundColor, textColor}: ItemProps) => (
+  <TouchableOpacity onPress={onPress} style={[styles.item, {backgroundColor}]}>
+    <Text style={[styles.title, {color: textColor}]}>{item.title}</Text>
+  </TouchableOpacity>
+);
+const listEmptyComponent=()=>{
+  return(
+    <View style={styles.emptyContainer}>
+      <Text style={{color:'green',textAlign:'center',justifyContent:'center',alignItems:'center',fontSize:20}}>No orders available</Text>
+    </View>
+  )
+}
+const  Order = ({ route, navigation }: ProductScreenProps) =>  {
+  const [selectedId, setSelectedId] = useState<string>();
+  const renderItem = ({item}: {item: ItemData}) => {
+    const backgroundColor = item.id === selectedId ? '#6e3b6e' : '#f9c2ff';
+    const color = item.id === selectedId ? 'white' : 'black';
+  
+    return (
+      <Item
+        item={item}
+        onPress={() => setSelectedId(item.id)}
+        backgroundColor={backgroundColor}
+        textColor={color}
+      />
+    );
+  };
   return (
     <SafeAreaView>
      <View>
@@ -19,18 +60,18 @@ const  Sales_Reports = ({ route, navigation }: ProductScreenProps) =>  {
      style={styles.headerWithShadow}
    />
      </View>
-     <ScrollView>
-     <View style={styles.contentContainer}>
-     <Text>
-   All Orders Detail
-     </Text>
-     </View>
-     </ScrollView>
+     <FlatList
+        data={DATA}
+        renderItem={renderItem}
+        keyExtractor={item => item.id}
+        extraData={selectedId}
+        ListEmptyComponent={listEmptyComponent}
+      />
     </SafeAreaView>
   )
 }
 
-export default Sales_Reports
+export default Order
 
 const styles = StyleSheet.create({
   headerWithShadow: {
@@ -47,4 +88,21 @@ const styles = StyleSheet.create({
   contentContainer: {
     paddingTop: 5,
   },
+  item: {
+    padding: 20,
+    marginVertical: 8,
+    marginHorizontal: 16,
+  },
+  title: {
+    fontSize: 32,
+  },
+  emptyContainer:{
+    flex:1,
+           justifyContent:'center',
+           alignItems:'center',
+           textAlign:'center',
+           marginTop:200,
+           alignContent:'center',
+
+  }
 })

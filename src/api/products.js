@@ -1,7 +1,7 @@
 const data = [
     {
       id: 1,
-      title: 'Agri - Protex',
+      title: 'Agri - Protex1',
       price: 8060.00,
       subTitle:'Crop Production',
       save: 'Save : ₹ 1000.00',
@@ -9,7 +9,7 @@ const data = [
     },
     {
       id: 2,
-      title: 'Agri - Protex',
+      title: 'Agri - Protex2',
       price: 7060.00,
       subTitle:'Crop Production',
       save: 'Save : ₹ 1000.00',
@@ -17,7 +17,7 @@ const data = [
     },
     {
         id: 3,
-        title: 'Agri - Protex',
+        title: 'Agri - Protex3',
         price: 6060.00,
         subTitle:'Crop Production',
         save: 'Save : ₹ 1000.00',
@@ -25,7 +25,7 @@ const data = [
       },
       {
         id: 4,
-        title: 'Agri - Protex',
+        title: 'Agri - Protex4',
         price: 5060.00,
         subTitle:'Crop Production',
         save: 'Save : ₹ 1000.00',
@@ -33,7 +33,7 @@ const data = [
       },
       {
         id: 5,
-        title: 'Agri - Protex',
+        title: 'Agri - Protex5',
         price: 4060.00,
         subTitle:'Crop Production',
         save: 'Save : ₹ 1000.00',
@@ -41,7 +41,7 @@ const data = [
       },
       {
         id: 6,
-        title: 'Agri - Protex',
+        title: 'Agri - Protex6',
         price: 2060.00,
         subTitle:'Crop Production',
         save: 'Save : ₹ 1000.00',
@@ -49,7 +49,7 @@ const data = [
       },
       {
         id: 7,
-        title: 'Agri - Protex',
+        title: 'Agri - Protex7',
         price: 3060.00,
         subTitle:'Crop Production',
         save: 'Save : ₹ 1000.00',
@@ -57,7 +57,7 @@ const data = [
       },
       {
         id: 8,
-        title: 'Agri - Protex',
+        title: 'Agri - Protex8',
         price: 1060.00,
         subTitle:'Crop Production',
         save: 'Save : ₹ 1000.00',

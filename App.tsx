@@ -3,7 +3,6 @@ import SplashScreen from 'react-native-splash-screen';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Login from './src/components/Login';
-// import OtpLogin from './src/components/OtpLogin';
 import Signup from './src/components/Signup';
 import ForgotPassword from './src/components/ForgotPassword';
 import TabNavigation from './src/components/TabNavigation/TabNavigation';
@@ -20,8 +19,6 @@ import AddtoCart from './src/pages/Tradding/BuyProducts/AddtoCart';
 import DiseasePrediction from './src/pages/DiseasePrediction/DiseasePrediction';
 import { Provider } from 'react-redux';
 import { store } from './src/store/store';
-// import FillOtp from './src/components/TabNavigation/FillOtp';
-// import auth from '@react-native-firebase/auth';
 import { ToastProvider } from 'react-native-toast-notifications'
 import SellProducts from './src/pages/Tradding/SellProducts/SellProducts';
 import AccountCreation from './src/components/AccountCreation';
@@ -31,6 +28,12 @@ import Dashboard from './src/seller/Dashboard';
 import AddProducts from './src/seller/crudOperations/AddProducts';
 import ProductDetails from './src/seller/ProductDetails';
 import EditProducts from './src/seller/crudOperations/EditProducts';
+import Accounts from './src/seller/accounts/Accounts';
+import SellerProfile from './src/seller/accounts/Profile'
+import SellerPrivacyPolicy from './src/seller/accounts/PrivacyPolicy'
+import SellerHelpandSupport from './src/seller/accounts/HelpandSupport'
+import AboutSeller from './src/seller/accounts/AboutUs'
+import sellerTermsandConditions from './src/seller/accounts/TermsandConditions'
 const Stack = createNativeStackNavigator();
 const App = () => {
   useEffect(() => {
@@ -39,7 +42,6 @@ const App = () => {
 
   return (
     <Provider store={store}>
-    {/* auth().currentUser?'TabNavigation': */}
     <ToastProvider>
     <NavigationContainer>
     <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName={'Login'}>
@@ -67,6 +69,12 @@ const App = () => {
     <Stack.Screen name='Add Products' component={AddProducts}/>
     <Stack.Screen name='details' component={ProductDetails}/>
     <Stack.Screen name='Edit Product' component={EditProducts}/>
+    <Stack.Screen name='Accounts' component={Accounts}/>
+    <Stack.Screen name='sellerProfile' component={SellerProfile}/>
+    <Stack.Screen name='privacyPolicy' component={SellerPrivacyPolicy}/>
+    <Stack.Screen name='sellerSupport' component={SellerHelpandSupport}/>
+    <Stack.Screen name='aboutSeller' component={AboutSeller}/>
+    <Stack.Screen name='sellerTermsandConditions' component={sellerTermsandConditions}/>
     {/* end of Seller Routes */}
   </Stack.Navigator>
  </NavigationContainer>

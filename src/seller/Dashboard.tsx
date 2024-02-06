@@ -9,7 +9,7 @@ import Order from './Order';
 import Products from './Products';
 import Sales_Reports from './Sales_Reports';
 import Messages from './Messages';
-import Logout from './Logout';
+import Accounts from './accounts/Accounts';
 import { useAppSelector } from '../store/hooks';
 const Tab = createMaterialBottomTabNavigator();
 interface TabItem {
@@ -27,7 +27,7 @@ const TabArr: TabItem[] = [
   { route: 'Reports', label: 'Sales Report', type: 'Octicons', icon: 'report', component: Sales_Reports, tabBarColor: Colors.yellow },
   { route: 'Messages', label: 'Messages', type: 'Entypo', icon: 'message', component: Messages, tabBarColor: Colors.green },
   { route: 'Orders', label: 'Orders', type: 'AntDesign', icon: 'shoppingcart', component: Order, tabBarColor: Colors.green },
-  { route: 'Logout', label: 'Logout', type: 'MaterialIcons', icon: 'logout', component:Logout, tabBarColor: Colors.purple },
+  { route: 'Account', label: 'Account', type: 'FontAwesome', icon: 'user-circle-o', component: Accounts, tabBarColor: Colors.purple },
 ];
 
 type Tab4Props = {
