@@ -118,6 +118,7 @@ const SellerAccount:React.FC<SignupProps> = (props) => {
     //     // }
     //   }
      console.warn("Seller account created successfuly")
+     props.navigation.navigate('Seller Dashboard')
     };
   return (
     <SafeAreaView>

@@ -27,6 +27,10 @@ import SellProducts from './src/pages/Tradding/SellProducts/SellProducts';
 import AccountCreation from './src/components/AccountCreation';
 import BuyerAccount from './src/components/BuyerAccount';
 import SellerAccount from './src/components/SellerAccount';
+import Dashboard from './src/seller/Dashboard';
+import AddProducts from './src/seller/crudOperations/AddProducts';
+import ProductDetails from './src/seller/ProductDetails';
+import EditProducts from './src/seller/crudOperations/EditProducts';
 const Stack = createNativeStackNavigator();
 const App = () => {
   useEffect(() => {
@@ -41,8 +45,6 @@ const App = () => {
     <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName={'Login'}>
     <Stack.Screen name='TabNavigation' component={TabNavigation}/>
     <Stack.Screen name='Login' component={Login}/>
-    {/* <Stack.Screen name='OtpLogin' component={OtpLogin}/>
-    <Stack.Screen name='fillOtp' component={FillOtp}/> */}
     <Stack.Screen name='Signup' component={Signup}/>
     <Stack.Screen name='ForgotPassword' component={ForgotPassword}/>
     <Stack.Screen name='profile' component={Profile}/>
@@ -60,6 +62,12 @@ const App = () => {
     <Stack.Screen name='accounts' component={AccountCreation}/>
     <Stack.Screen name='buyeraccount' component={BuyerAccount}/>
     <Stack.Screen name='selleraccount' component={SellerAccount}/>
+    {/* Seller Routes */}
+    <Stack.Screen name='Seller Dashboard' component={Dashboard}/>
+    <Stack.Screen name='Add Products' component={AddProducts}/>
+    <Stack.Screen name='details' component={ProductDetails}/>
+    <Stack.Screen name='Edit Product' component={EditProducts}/>
+    {/* end of Seller Routes */}
   </Stack.Navigator>
  </NavigationContainer>
  </ToastProvider>
