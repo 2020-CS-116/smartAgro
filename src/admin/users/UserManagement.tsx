@@ -80,8 +80,7 @@ type UserManagementProps = {
 const UserManagement = ({ route, navigation }: UserManagementProps) =>{
   const [searchText, setSearchText] = useState<string>('');
   const [users, setUsers] = useState<User[]>([]);
-  
-const [filteredUsers, setFilteredUsers] = useState<User[]>(users); 
+  const [filteredUsers, setFilteredUsers] = useState<User[]>(users); 
 useEffect(() => {
       getUsers()
 }, [])
@@ -138,16 +137,25 @@ const handleChange = (text:any) => {
       </TouchableOpacity> */}
     </View>
    {
-        filteredUsers.map((item:any)=>{
-          return(
-            <View style={styles.content} key={item.id}>
-            <TouchableOpacity><Image source={{uri:item.image}} style={styles.profileImage}/></TouchableOpacity>
-            <View><Text style={styles.text}>{item.firstName} {item.lastName}</Text></View>
-            <View><Text style={styles.text}>admin</Text></View>
-            <TouchableOpacity><Ionicons  name="ellipsis-horizontal" size={30} color="#000" /></TouchableOpacity>
-           </View>
-          )
-        })
+       filteredUsers.length===0? users.map((item:any)=>{
+        return(
+          <View style={styles.content} key={item.id}>
+          <TouchableOpacity><Image source={{uri:item.image}} style={styles.profileImage}/></TouchableOpacity>
+          <View><Text style={styles.text}>{item.firstName} {item.lastName}</Text></View>
+          <View><Text style={styles.text}>admin</Text></View>
+          <TouchableOpacity><Ionicons  name="ellipsis-horizontal" size={30} color="#000" /></TouchableOpacity>
+         </View>
+        )
+      }): filteredUsers.map((item:any)=>{
+        return(
+          <View style={styles.content} key={item.id}>
+          <TouchableOpacity><Image source={{uri:item.image}} style={styles.profileImage}/></TouchableOpacity>
+          <View><Text style={styles.text}>{item.firstName} {item.lastName}</Text></View>
+          <View><Text style={styles.text}>admin</Text></View>
+          <TouchableOpacity><Ionicons  name="ellipsis-horizontal" size={30} color="#000" /></TouchableOpacity>
+         </View>
+        )
+      })
    }
    </ScrollView>
     </View>
@@ -174,31 +182,32 @@ const styles = StyleSheet.create({
     marginTop:10,
     justifyContent:'center',
   },
-  input:{
-    flex: 1, 
+  input: {
+    flex: 1,
     height: 40,
-    borderColor: '#32CD32', 
+    borderColor: '#CAFFFF',
     borderWidth: 1,
-    marginLeft:10,
-    // backgroundColor:'#32CD32',
-    // borderEndColor:'#32CD32',
-    // borderStartColor:'#32CD32',
-    // borderBottomColor:'#32CD32'
-    backgroundColor:'#FFF',
-     borderRadius:10,
-     marginHorizontal:10,
+    borderRadius: 20, 
+    paddingHorizontal: 16, 
+    marginHorizontal: 10,
+    backgroundColor: '#FFFFFF', 
+    fontFamily: 'PT Sans', 
+    fontSize: 16,
+    fontStyle: 'normal',
+    fontWeight: '400', 
   },
-  searchButton:{
-      backgroundColor:"#32CD32",
-      height:40,
-      justifyContent:'center',
-      alignItems:'center',
-      width:100,
-      borderBottomEndRadius:10,
-      borderTopEndRadius:10,
-      marginRight:10,
-  }
-  ,
+
+  searchButton: {
+    backgroundColor: '#32CD32',
+    height: 40,
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: 100,
+    borderBottomEndRadius: 10,
+    borderTopEndRadius: 10,
+    marginRight: 10,
+    elevation: 2, 
+  },
       exportButton:{
           elevation:1,
           backgroundColor:"#FF1493",
