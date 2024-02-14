@@ -5,11 +5,9 @@ import MyHeader from '../components/TabNavigation/MyHeader';
 import { RouteProp, NavigationProp } from '@react-navigation/native';
 import { responsiveHeight } from 'react-native-responsive-dimensions';
 import Carousel from './Carousal';
-import AntDesign from 'react-native-vector-icons/AntDesign'
 import FloatingButton from './FloatingButton';
 import Sales_Summary from './Sales_Summary';
 import VisitorInsights from './VisitorInsights';
-import Products from './Products';
 import TopProducts from './TopProducts';
 import Total_Revenue from './Total_Revenue';
 type HomeScreenProps = {

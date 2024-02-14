@@ -1,6 +1,8 @@
 import { StyleSheet, Text, View,TouchableOpacity,Image } from 'react-native'
 import React from 'react'
-
+import Icon from 'react-native-vector-icons/FontAwesome';
+import Icon1 from 'react-native-vector-icons/FontAwesome';
+import Icon2 from 'react-native-vector-icons/FontAwesome';
 const Sales_Summary = () => {
   return (
     <View>
@@ -73,8 +75,38 @@ const Sales_Summary = () => {
        <Text style={styles.total} >New Customers</Text>
        <Text style={styles.text} >+8% from yesterday</Text>
      </TouchableOpacity>
+    
    </View>
-   
+   <View style={styles.cardRow}>
+ {/* Fifth Card */}
+ <TouchableOpacity style={styles.cardContainer5}>
+       <View style={styles.logoContainer1}>
+       <Icon name="truck" size={20} color="#FFF" />
+       </View>
+       <Text style={styles.price} >67</Text>
+       <Text style={styles.total} >Shipped Orders</Text>
+       <Text style={styles.text} >+8% from yesterday</Text>
+     </TouchableOpacity>
+     {/* Sixth Card */}
+ <TouchableOpacity style={styles.cardContainer6}>
+       <View style={styles.logoContainer2}>
+       <Icon1 name="clock-o" size={20} color="#FFF" />
+       </View>
+       <Text style={styles.price} >67</Text>
+       <Text style={styles.total} >Pending Orders</Text>
+       <Text style={styles.text} >+8% from yesterday</Text>
+     </TouchableOpacity>
+   </View>
+   <View style={styles.cardRow}>
+   <TouchableOpacity style={styles.cardContainer7}>
+       <View style={styles.logoContainer3}>
+       <Icon2 name="plus-circle" size={20} color="#FFF" />
+       </View>
+       <Text style={styles.price} >67</Text>
+       <Text style={styles.total} >New Orders</Text>
+       <Text style={styles.text} >+8% from yesterday</Text>
+     </TouchableOpacity>
+   </View>
    {/* Add more card rows here */}
    {/* <View style={styles.cardRow}>
      {/* Fifth Card */}
@@ -170,10 +202,91 @@ const styles = StyleSheet.create({
         shadowRadius: 4,
         elevation: 4, 
       },
+      cardContainer5: {
+        width: 150,
+        height: 165,
+        flexShrink: 0,
+        borderRadius: 15,
+        backgroundColor: '#E0F8FF',
+        paddingLeft:15,
+        margin: 10, 
+       
+        shadowColor: '#000',
+        shadowOffset: {
+          width: 0,
+          height: 2,
+        },
+        shadowOpacity: 0.2, 
+        shadowRadius: 4,
+        elevation: 4, 
+      },
+      cardContainer6: {
+        width: 150,
+        height: 165,
+        flexShrink: 0,
+        borderRadius: 15,
+        backgroundColor: '#FCEBD5',
+        paddingLeft:15,
+        margin: 10, 
+       
+        shadowColor: '#000',
+        shadowOffset: {
+          width: 0,
+          height: 2,
+        },
+        shadowOpacity: 0.2, 
+        shadowRadius: 4,
+        elevation: 4, 
+      },
+      cardContainer7: {
+        width: 150,
+        height: 165,
+        flexShrink: 0,
+        borderRadius: 15,
+        backgroundColor: '#E1E0FF',
+        paddingLeft:15,
+        margin: 10, 
+       
+        shadowColor: '#000',
+        shadowOffset: {
+          width: 0,
+          height: 2,
+        },
+        shadowOpacity: 0.2, 
+        shadowRadius: 4,
+        elevation: 4, 
+      },
       logoContainer: {
         width: 40,
-        height: 35,
+        height: 40,
         backgroundColor: '#FFF',
+        borderRadius: 50,
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginTop: 10, // Adjust the spacing as needed
+      },
+      logoContainer1: {
+        width: 39,
+        height: 39,
+        backgroundColor: 'green',
+        borderRadius: 50,
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginTop: 10, // Adjust the spacing as needed
+      },
+      logoContainer2: {
+        width: 39,
+        height: 39,
+        backgroundColor: 'orange',
+        borderRadius: 50,
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginTop: 10, // Adjust the spacing as needed
+      },
+      logoContainer3: {
+        width: 39,
+        height: 39,
+        backgroundColor: 'blue',
         borderRadius: 50,
         justifyContent: 'center',
         alignItems: 'center',
