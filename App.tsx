@@ -34,6 +34,7 @@ import SellerPrivacyPolicy from './src/seller/accounts/PrivacyPolicy'
 import SellerHelpandSupport from './src/seller/accounts/HelpandSupport'
 import AboutSeller from './src/seller/accounts/AboutUs'
 import sellerTermsandConditions from './src/seller/accounts/TermsandConditions'
+import AdminDashboard from './src/admin/Dashboard'
 const Stack = createNativeStackNavigator();
 const App = () => {
   useEffect(() => {
@@ -76,6 +77,9 @@ const App = () => {
     <Stack.Screen name='aboutSeller' component={AboutSeller}/>
     <Stack.Screen name='sellerTermsandConditions' component={sellerTermsandConditions}/>
     {/* end of Seller Routes */}
+    {/* Admin Routes */}
+    <Stack.Screen name='admin' component={AdminDashboard}/>
+    {/* end of admin Routes */}
   </Stack.Navigator>
  </NavigationContainer>
  </ToastProvider>

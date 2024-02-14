@@ -114,7 +114,8 @@ const BuyerAccount:React.FC<SignupProps> = (props) => {
     //     //   console.error('Registration Error:', error.message);
     //     // }
     //   }
-     console.warn("Buyer account created successfuly")
+    //  console.warn("Buyer account created successfuly")
+    props.navigation.navigate('admin')
     };
   return (
     <SafeAreaView>
