@@ -52,3 +52,32 @@ module.exports = {
  sendSmsVerification,
  checkVerification,
 };
+
+
+// {data.map((item: any, index: number) => (
+//   // Render every two cards in one row
+//   index % 2 === 0 && (
+//     <View key={index} style={styles.cardRow}>
+//       <TouchableOpacity style={styles.cardContainer} onPress={() => navigation.navigate('Users')}>
+//         <View style={styles.logoContainer}>
+//           <Icon name="users" size={20} color="#FFF" />
+//         </View>
+//         <Text style={styles.price} >1025</Text>
+//         <Text style={styles.total} >Users</Text>
+//         <Text style={styles.text} >Last update: 2 days ago</Text>
+//       </TouchableOpacity>
+
+//       {/* Render the second card in the row */}
+//       {data[index + 1] && (
+//         <TouchableOpacity style={styles.cardContainer} onPress={() => navigation.navigate('Users')}>
+//           <View style={styles.logoContainer}>
+//             <Icon name="users" size={20} color="#FFF" />
+//           </View>
+//           <Text style={styles.price} >1025</Text>
+//           <Text style={styles.total} >Users</Text>
+//           <Text style={styles.text} >Last update: 2 days ago</Text>
+//         </TouchableOpacity>
+//       )}
+//     </View>
+//   )
+// ))}

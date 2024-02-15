@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View,ScrollView,TextInput,TouchableOpacity,Image } from 'react-native'
+import { StyleSheet, Text, View,ScrollView,TextInput,TouchableOpacity,Image,ActivityIndicator } from 'react-native'
 import React,{useState,useEffect} from 'react'
 import MyHeader from '../TabNavigation/MyHeader'
 import Styles from '../TabNavigation/Styles'
@@ -137,7 +137,9 @@ const handleChange = (text:any) => {
       </TouchableOpacity> */}
     </View>
    {
-       filteredUsers.length===0? users.map((item:any)=>{
+       users.length===0?<View style={styles.loadercontainer}>
+       <ActivityIndicator size="large" color="#6BAAFC" />
+     </View>:filteredUsers.length===0? users.map((item:any)=>{
         return(
           <View style={styles.content} key={item.id}>
           <TouchableOpacity><Image source={{uri:item.image}} style={styles.profileImage}/></TouchableOpacity>
@@ -269,5 +271,12 @@ const styles = StyleSheet.create({
       fontWeight: '700',
       letterSpacing: 1,
       textAlign:'center'
-      }
+      },
+      loadercontainer:{
+        flex:1,
+       justifyContent:'center',
+       alignItems:'center',
+       textAlign:'center',
+       marginTop:150,
+     }
 })

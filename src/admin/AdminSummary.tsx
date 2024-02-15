@@ -34,7 +34,7 @@ const AdminSummary  = ({ route, navigation }: AdminSummaryProps) => {
         </TouchableOpacity>
    
         {/* Card2 */}
-        <TouchableOpacity style={styles.cardContainer2}>
+        <TouchableOpacity style={styles.cardContainer2} onPress={()=>navigation.navigate('Products')}>
           <View style={styles.logoContainerProducts}>
           <Icon name="shopping-bag" size={20} color="#FFF" />
           </View>
@@ -47,7 +47,7 @@ const AdminSummary  = ({ route, navigation }: AdminSummaryProps) => {
       {/* Second Row */}
       <View style={styles.cardRow}>
         {/* Third Card */}
-        <TouchableOpacity style={styles.cardContainer3}>
+        <TouchableOpacity style={styles.cardContainer3} onPress={()=>navigation.navigate('Orders')}>
           <View style={styles.logoContainerOrders}>
           <Icon name="list-alt" size={20} color="#FFF" />
           </View>
@@ -69,7 +69,7 @@ const AdminSummary  = ({ route, navigation }: AdminSummaryProps) => {
       </View>
       <View style={styles.cardRow}>
     {/* Fifth Card */}
-    <TouchableOpacity style={styles.cardContainer5}>
+    <TouchableOpacity style={styles.cardContainer5} onPress={()=>navigation.navigate('Feedbacks')}>
           <View style={styles.logoContainer1}>
           <Icon name="star" size={20} color="#FFF" />
           </View>

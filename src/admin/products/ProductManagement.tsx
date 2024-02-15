@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View,ScrollView,TextInput,TouchableOpacity,Image } from 'react-native'
+import { StyleSheet, Text, View,ScrollView,TextInput,TouchableOpacity,Image,ActivityIndicator } from 'react-native'
 import React,{useState,useEffect} from 'react'
 import MyHeader from '../TabNavigation/MyHeader'
 import Styles from '../TabNavigation/Styles'
@@ -33,7 +33,6 @@ useEffect(() => {
 const getUsers=async()=>{
      const response=await axios.get('https://fakestoreapi.com/products')
      const data=response.data;
-    //  const users=data.users;
      setProducts(data)
 } 
 
@@ -83,7 +82,9 @@ const handleChange = (text:any) => {
     </TouchableOpacity> */}
   </View>
  {
-     filteredUsers.length===0? products.map((item:any)=>{
+    products.length===0?<View style={styles.loadercontainer}>
+    <ActivityIndicator size="large" color="#6BAAFC" />
+  </View>: filteredUsers.length===0? products.map((item:any)=>{
       return(
         <View style={styles.content} key={item.id}>
         <TouchableOpacity><Image source={{uri:item.image}} style={styles.profileImage}/></TouchableOpacity>
@@ -98,7 +99,7 @@ const handleChange = (text:any) => {
         <TouchableOpacity><Image source={{uri:item.image}} style={styles.profileImage}/></TouchableOpacity>
         <View><Text style={styles.text}>{item.title.split(' ').slice(0, 2).join(' ')}</Text></View>
         <View><Text style={styles.text}>{item.category}</Text></View>
-        <TouchableOpacity><Ionicons  name="ellipsis-horizontal" size={30} color="#000" /></TouchableOpacity>
+        <TouchableOpacity><Ionicons  name="edit" size={30} color="#000" /></TouchableOpacity>
        </View>
       )
     })
@@ -214,5 +215,12 @@ const styles = StyleSheet.create({
       fontWeight: '700',
       letterSpacing: 1,
       textAlign:'center'
+      },
+      loadercontainer:{
+         flex:1,
+        justifyContent:'center',
+        alignItems:'center',
+        textAlign:'center',
+        marginTop:150,
       }
 })
