@@ -3,7 +3,6 @@ import SplashScreen from 'react-native-splash-screen';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Login from './src/components/Login';
-import Signup from './src/components/Signup';
 import ForgotPassword from './src/components/ForgotPassword';
 import TabNavigation from './src/components/TabNavigation/TabNavigation';
 import Profile from './src/components/profile/Profile';
@@ -48,7 +47,6 @@ const App = () => {
     <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName={'Login'}>
     <Stack.Screen name='TabNavigation' component={TabNavigation}/>
     <Stack.Screen name='Login' component={Login}/>
-    <Stack.Screen name='Signup' component={Signup}/>
     <Stack.Screen name='ForgotPassword' component={ForgotPassword}/>
     <Stack.Screen name='profile' component={Profile}/>
     <Stack.Screen name='privacy' component={PrivacyPolicy}/>
@@ -57,7 +55,7 @@ const App = () => {
     <Stack.Screen name='term' component={TermsandConditions}/>
     <Stack.Screen name='reviewsModal' component={RateUsModal}/>
     <Stack.Screen name='updatePassword' component={UpdatePassword}/>
-    <Stack.Screen name='buyProducts' component={BuyProducts}/>
+    <Stack.Screen name='buyProducts' component={BuyProducts} />
     <Stack.Screen name='detail' component={Productdetails}/>
     <Stack.Screen name='cart' component={AddtoCart}/>
     <Stack.Screen name='disease-prediction' component={DiseasePrediction}/>

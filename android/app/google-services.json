@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1018875276304",
+    "project_id": "smartagro-b7f79",
+    "storage_bucket": "smartagro-b7f79.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1018875276304:android:b8f46944c9186bedc0ae95",
+        "android_client_info": {
+          "package_name": "com.fyp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyArFpATkugN9ED9wRBfKL6njQNielokhcE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
