@@ -476,17 +476,17 @@ const HomeScreen = ({ route, navigation }: HomeScreenProps) => {
 
               <View style={styles.card_contain}>
                 <View style={styles.img_cotainer}>
-                  <TouchableOpacity onPress={() => navigation.navigate('disease-prediction')}>
+                  <TouchableOpacity onPress={() => navigation.navigate('agroYeild')}>
                     <Image
                       source={require('../assets/h_img3.jpg')}
                       style={styles.card_img} />
                   </TouchableOpacity>
                 </View>
-                <Text style={styles.overlayText}> Agro Equipments </Text>
+                <Text style={styles.overlayText}> Agro Yeilds </Text>
               </View>
               <View style={styles.card_contain}>
                 <View style={styles.img_cotainer}>
-                  <TouchableOpacity onPress={() => navigation.navigate('disease-prediction')}>
+                  <TouchableOpacity onPress={() => navigation.navigate('agroEquipments')}>
                     <Image
                       source={require('../assets/h_img4.jpg')}
                       style={styles.card_img4} />

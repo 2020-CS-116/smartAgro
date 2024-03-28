@@ -80,7 +80,7 @@ const Login: React.FC<LoginProps> = (props) => {
     const namevar = e;
     setName(namevar);
     setverifyname(false);
-    const nameRegex = /^[a-zA-Z\s]+$/;
+    const nameRegex = /^[a-z0-9]+$/;
     if (nameRegex.test(namevar)) {
       setName(namevar)
       setverifyname(true)
@@ -119,7 +119,7 @@ const Login: React.FC<LoginProps> = (props) => {
             />
             {
               name.length < 1 ? null : verifyname ? null :
-                <Text style={{ margin: 20, color: '#D20062' }}> Don't use Special Chrachter or Integers </Text>
+                <Text style={{ margin: 5, color: '#D20062' }}> Only use small letter and Integer </Text>
             }
 
             <TextInput
@@ -137,7 +137,7 @@ const Login: React.FC<LoginProps> = (props) => {
             />
             {
               password.length < 1 ? null : verifypass ? null :
-                <Text style={{ margin: 20, color: '#D20062' }}> Password must be 8 digit long </Text>
+                <Text style={{ margin: 5, color: '#D20062' }}> Password must be 8 digit long </Text>
             }
 
             <Text style={styles.forgotText} onPress={() => props.navigation.navigate('ForgotPassword')}>

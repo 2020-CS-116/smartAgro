@@ -54,7 +54,7 @@ const ForgotPassword: React.FC<ForgotPasswordProps> = ({ navigation }) => {
             />
             {
               emial.length < 1 ? null : verifyemial ? null :
-                <Text style={{ margin: 20, color: '#D20062' }}> Invalid Email</Text>
+                <Text style={{ margin: 5, color: '#D20062' }}> Invalid Email</Text>
             }
             <TouchableOpacity style={styles.button} onPress={handleSendLink}>
               <Text style={styles.buttonText}>Send Link</Text>

@@ -117,8 +117,12 @@ const BuyerAccount: React.FC<SignupProps> = (props) => {
     //     // }
     //   }
     //  console.warn("Buyer account created successfuly")
-    props.navigation.navigate('admin')
+    // props.navigation.navigate('admin')
+
+    data.userName = ("")
+    Alert.alert('User has been Signed Up Successfully!')
   };
+
 
   const validusename = (e: string) => {
     const unamevar = e
@@ -186,7 +190,7 @@ const BuyerAccount: React.FC<SignupProps> = (props) => {
             />
             {
               userName.length < 1 ? null : verifyusername ? null :
-                <Text style={{ margin: 20, color: '#D20062' }}> Only use small letter and Integer </Text>
+                <Text style={{ margin: 5, color: '#D20062' }}> Only use small letter and Integer </Text>
             }
             <TextInput
               label="Phone"
@@ -196,7 +200,7 @@ const BuyerAccount: React.FC<SignupProps> = (props) => {
             />
             {
               phoneNumber.length < 1 ? null : verifyphone ? null :
-              <Text style={{ margin: 20, color: '#D20062' }}> Invalid Phone Number </Text>
+              <Text style={{ margin: 5, color: '#D20062' }}> Invalid Phone Number </Text>
             }
 
             <TextInput
@@ -214,7 +218,7 @@ const BuyerAccount: React.FC<SignupProps> = (props) => {
             />
             {
               password.length < 1 ? null : verifypass ? null :
-              <Text style={{ margin: 20, color: '#D20062' }}> Password must be 8 digit long </Text>
+              <Text style={{ margin: 5, color: '#D20062' }}> Password must be 8 digit long </Text>
             }
             <TextInput
               label="Confirm password"
@@ -231,7 +235,7 @@ const BuyerAccount: React.FC<SignupProps> = (props) => {
             />
             {
               confirmPassword.length < 1 ? null : verifyCpass ? null :
-              <Text style={{ margin: 20, color: '#D20062' }}>Password must be 8 digit long </Text>
+              <Text style={{ margin: 5, color: '#D20062' }}>Password must be 8 digit long </Text>
             }
             {
               loading ? (<ActivityIndicator size="large" color="#0000ff" />) : <TouchableOpacity style={styles.button} onPress={handleRegistration}>

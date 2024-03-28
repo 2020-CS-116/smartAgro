@@ -34,6 +34,8 @@ import SellerHelpandSupport from './src/seller/accounts/HelpandSupport'
 import AboutSeller from './src/seller/accounts/AboutUs'
 import sellerTermsandConditions from './src/seller/accounts/TermsandConditions'
 import AdminDashboard from './src/admin/Dashboard'
+import AgroEquipments from './src/pages/Tradding/BuyProducts/AgroEquipments'
+import AgroYeild from './src/pages/Tradding/BuyProducts/AgroYeild'
 const Stack = createNativeStackNavigator();
 const App = () => {
   useEffect(() => {
@@ -56,6 +58,8 @@ const App = () => {
     <Stack.Screen name='reviewsModal' component={RateUsModal}/>
     <Stack.Screen name='updatePassword' component={UpdatePassword}/>
     <Stack.Screen name='buyProducts' component={BuyProducts} />
+    <Stack.Screen name='agroEquipments' component={AgroEquipments} />
+    <Stack.Screen name='agroYeild' component={AgroYeild} />
     <Stack.Screen name='detail' component={Productdetails}/>
     <Stack.Screen name='cart' component={AddtoCart}/>
     <Stack.Screen name='disease-prediction' component={DiseasePrediction}/>

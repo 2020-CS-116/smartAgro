@@ -241,7 +241,7 @@ const SellerAccount: React.FC<SignupProps> = (props) => {
             />
              {
               userName.length < 1 ? null : verifyuserName ? null :
-                <Text style={{ margin: 20, color: '#D20062' }}> Only use small letter and Integer </Text>
+                <Text style={{ margin: 5, color: '#D20062' }}> Only use small letter and Integer </Text>
             }
             <TextInput
               label="Email"
@@ -251,7 +251,7 @@ const SellerAccount: React.FC<SignupProps> = (props) => {
             />
              {
               email.length < 1 ? null : verifyBname ? null :
-                <Text style={{ margin: 20, color: '#D20062' }}> Invalid Email </Text>
+                <Text style={{ margin: 5, color: '#D20062' }}> Invalid Email </Text>
             }
             <TextInput
               label="Phone Number"
@@ -261,7 +261,7 @@ const SellerAccount: React.FC<SignupProps> = (props) => {
             />
             {
               phoneNumber.length < 1 ? null : verifyphone ? null :
-                <Text style={{ margin: 20, color: '#D20062' }}> Invalid Phone number </Text>
+                <Text style={{ margin: 5, color: '#D20062' }}> Invalid Phone number </Text>
             }
             <TextInput
               label="Bussiness Name"
@@ -271,7 +271,7 @@ const SellerAccount: React.FC<SignupProps> = (props) => {
             />
             {
               bussinessName.length < 1 ? null : verifyBname ? null :
-                <Text style={{ margin: 20, color: '#D20062' }}> Only alphabets and integers are allowed  </Text>
+                <Text style={{ margin: 5, color: '#D20062' }}> Only alphabets and integers are allowed  </Text>
             }
             <TextInput
               label="Bussiness Address"
@@ -281,7 +281,7 @@ const SellerAccount: React.FC<SignupProps> = (props) => {
             />
             {
               bussinessAddress.length < 1 ? null : verifyBadd ? null :
-                <Text style={{ margin: 20, color: '#D20062' }}> Only alphabets are allowed </Text>
+                <Text style={{ margin: 5, color: '#D20062' }}> Only alphabets are allowed </Text>
             }
             <TextInput
               label="CNIC Number"
@@ -291,7 +291,7 @@ const SellerAccount: React.FC<SignupProps> = (props) => {
             />
              {
               cnicNumber.length < 1 ? null : verifycnic ? null :
-                <Text style={{ margin: 20, color: '#D20062' }}> Enter Valid CNIC number </Text>
+                <Text style={{ margin: 5, color: '#D20062' }}> Enter Valid CNIC number </Text>
             }
             <TextInput
               label="Password"
@@ -308,7 +308,7 @@ const SellerAccount: React.FC<SignupProps> = (props) => {
             />
             {
               password.length < 1 ? null : verifypass ? null :
-                <Text style={{ margin: 20, color: '#D20062' }}> Password must be of 8 digits. </Text>
+                <Text style={{ margin: 5, color: '#D20062' }}> Password must be of 8 digits. </Text>
             }
             <TextInput
               label="Confirm password"
@@ -325,7 +325,7 @@ const SellerAccount: React.FC<SignupProps> = (props) => {
             />
             {
               confirmPassword.length < 1 ? null : verifyCpass ? null :
-                <Text style={{ margin: 20, color: '#D20062' }}> Password must be of 8 digits. </Text>
+                <Text style={{ margin: 5, color: '#D20062' }}> Password must be of 8 digits. </Text>
             }
             {
               loading ? (<ActivityIndicator size="large" color="#0000ff" />) : <TouchableOpacity style={styles.button} onPress={handleRegistration}>

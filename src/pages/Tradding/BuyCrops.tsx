@@ -5,110 +5,107 @@ import Carousal from './Carousal';
 import RecomendProducts from '../RecomendProducts'
 import { RouteProp, NavigationProp } from '@react-navigation/native';
 import FloatingButton1 from '../../components/profile/FloatingButton1';
+import MyHeader from '../../components/TabNavigation/MyHeader';
 type BuyCropsProps = {
   route: RouteProp<Record<string, object | undefined>, string>;
   navigation: NavigationProp<any>;
 };
-const BuyCrops:React.FC<BuyCropsProps> = ({route,navigation}) => {
+const BuyCrops: React.FC<BuyCropsProps> = ({ route, navigation }) => {
   return (
     <SafeAreaView>
-      
-      <View style={{ overflow: 'hidden', paddingBottom: 1 }}>
-        <View style={styles.topContainer}>
-          <View style={styles.circleContainer}>
-            <View style={styles.circularContainer2}></View>
-            <View style={styles.semiContainer}>
-              <View style={styles.semiCircleContainer}></View>
-              <View style={styles.semiCircleContainer1}></View>
-            </View>
-          </View>
-          <View>
-            <Text style={styles.smartText}>SmartAgro</Text>
-          </View>
-        </View>
-      </View>
+
+      {/* Header */}
+      <MyHeader
+        back
+        onPressBack={() => navigation.goBack()}
+        title={route.name}
+        right="more-vertical"
+        onRightPress={() => navigation.navigate('profile')}
+        style={styles.header_style}
+      />
+
       <View style={styles.contentContianer}>
-      <ScrollView nestedScrollEnabled={true}>
-        <View style={styles.carousal}>
-          <Carousal />
-        </View>
-        <View style={styles.categoryContainer}>
-          <Text style={styles.categoryText}>Categories</Text>
-          <View style={styles.cardContainer}>
-            {/* Card 1 */}
-            <View >
-            <TouchableOpacity style={styles.card} onPress={()=>navigation.navigate('buyProducts')}>
-              <Image
-                source={require('../../assets/cart.png')} // Replace with your image path
-                style={styles.logo}
-              />
-              <Text style={styles.text1}>Shop</Text>
-              </TouchableOpacity>
-            </View>
-            {/* Card 2 */}
-            <View style={styles.card}>
-            <TouchableOpacity style={styles.card}>
-              <Image
-                source={require('../../assets/comments.png')} // Replace with your image path
-                style={styles.logo}
-              />
-              <Text style={styles.text1}>Community</Text>
-              </TouchableOpacity>
-            </View>
-            {/* Card 3 */}
-            <View style={styles.card}>
-            <TouchableOpacity style={styles.card}>
-              <Image
-                source={require('../../assets/truck-delivery.png')} // Replace with your image path
-                style={styles.logo}
-              />
-              <Text style={styles.text1}>Delivery</Text>
-              </TouchableOpacity>
-            </View>
-            {/* Card 4 */}
-            <View >
-              <TouchableOpacity style={styles.card}>
-              <Image
-                source={require('../../assets/diamond.png')} // Replace with your image path
-                style={styles.logo}
-              />
-              <Text style={styles.text1}>Best Offers</Text>
-              </TouchableOpacity>
-            </View>
-            {/* Card 5 */}
-            <View >
-            <TouchableOpacity style={styles.card} onPress={()=>navigation.navigate('buyProducts')}>
-              <Image
-                source={require('../../assets/cart.png')} // Replace with your image path
-                style={styles.logo}
-              />
-              <Text style={styles.text1}>Buy Products</Text>
-              </TouchableOpacity>
-            </View>
-            {/* Card 6 */}
-            <View >
-            <TouchableOpacity style={styles.card} onPress={()=>navigation.navigate('SmartAgro')}>
-              <Image
-                source={require('../../assets/cart.png')} // Replace with your image path
-                style={styles.logo}
-              />
-              <Text style={styles.text1}>Sell Products</Text>
-              </TouchableOpacity>
+        <ScrollView nestedScrollEnabled={true}>
+          <View style={styles.carousal}>
+            <Carousal />
+          </View>
+          <View style={styles.categoryContainer}>
+            <Text style={styles.categoryText}>Categories</Text>
+            <View style={styles.cardContainer}>
+              {/* Card 1 */}
+              <View >
+                <TouchableOpacity style={styles.card} onPress={() => navigation.navigate('buyProducts')}>
+                  <Image
+                    source={require('../../assets/cart.png')} // Replace with your image path
+                    style={styles.logo}
+                  />
+                  <Text style={styles.text1}>Shop</Text>
+                </TouchableOpacity>
+              </View>
+              {/* Card 2 */}
+              <View style={styles.card}>
+                <TouchableOpacity style={styles.card}>
+                  <Image
+                    source={require('../../assets/comments.png')} // Replace with your image path
+                    style={styles.logo}
+                  />
+                  <Text style={styles.text1}>Community</Text>
+                </TouchableOpacity>
+              </View>
+              {/* Card 3 */}
+              <View style={styles.card}>
+                <TouchableOpacity style={styles.card}>
+                  <Image
+                    source={require('../../assets/truck-delivery.png')} // Replace with your image path
+                    style={styles.logo}
+                  />
+                  <Text style={styles.text1}>Delivery</Text>
+                </TouchableOpacity>
+              </View>
+              {/* Card 4 */}
+              <View >
+                <TouchableOpacity style={styles.card}>
+                  <Image
+                    source={require('../../assets/diamond.png')} // Replace with your image path
+                    style={styles.logo}
+                  />
+                  <Text style={styles.text1}>Best Offers</Text>
+                </TouchableOpacity>
+              </View>
+              {/* Card 5 */}
+              <View >
+                <TouchableOpacity style={styles.card} onPress={() => navigation.navigate('buyProducts')}>
+                  <Image
+                    source={require('../../assets/cart.png')} // Replace with your image path
+                    style={styles.logo}
+                  />
+                  <Text style={styles.text1}>Buy Products</Text>
+                </TouchableOpacity>
+              </View>
+              {/* Card 6 */}
+              <View >
+                <TouchableOpacity style={styles.card} onPress={() => navigation.navigate('SmartAgro')}>
+                  <Image
+                    source={require('../../assets/cart.png')} // Replace with your image path
+                    style={styles.logo}
+                  />
+                  <Text style={styles.text1}>Sell Products</Text>
+                </TouchableOpacity>
+              </View>
             </View>
           </View>
-        </View>
-        <View  style={styles.newsFeedContainer}>
-          <Text style={styles.newsText}>
-            Recommended Products
-          </Text>
-        <RecomendProducts route={route} navigation={navigation}/>
-        </View>
-      </ScrollView>
-      
+          <View style={styles.newsFeedContainer}>
+            <Text style={styles.newsText}>
+              Recommended Products
+            </Text>
+            <RecomendProducts route={route} navigation={navigation} />
+          </View>
+        </ScrollView>
+
       </View>
-         {/* floating action Component */}
-   <FloatingButton1/>
-  {/* end of floating action Component */}
+      {/* floating action Component */}
+      <FloatingButton1 />
+      {/* end of floating action Component */}
     </SafeAreaView>
   );
 };
@@ -116,22 +113,20 @@ const BuyCrops:React.FC<BuyCropsProps> = ({route,navigation}) => {
 export default BuyCrops;
 
 const styles = StyleSheet.create({
-  contentContianer:{
-   backgroundColor:'#fff',
+  contentContianer: {
+    backgroundColor: '#fff',
   },
-  topContainer: {
-    width: '100%',
-    height: 74,
-    flexShrink: 0,
-    backgroundColor: '#FFF',
-    shadowColor: 'rgba(63, 76, 95, 0.12)',
-    shadowOpacity: 1,
+  header_style: {
+    height: 80,
+
+    shadowColor: 'rgba(0, 0, 0, 0.3)',
     shadowOffset: {
       width: 0,
       height: 2,
     },
+    shadowOpacity: 1,
     shadowRadius: 4,
-    elevation: 4,
+    elevation: 6,
   },
   carousal: {
     width: '100%',
@@ -205,7 +200,7 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
     marginLeft: 20,
     marginTop: 20,
-    
+
   },
   card: {
     width: 79.391,
@@ -217,8 +212,8 @@ const styles = StyleSheet.create({
     margin: 10,
     alignItems: 'center',
     justifyContent: 'center',
-   
-   
+
+
     padding: 20, // Add padding around elements
     shadowColor: '#000',
     shadowOffset: {
@@ -244,19 +239,19 @@ const styles = StyleSheet.create({
     fontSize: 8,
     fontStyle: 'normal',
     fontWeight: '400',
-    marginTop:10,
+    marginTop: 10,
   },
-  newsFeedContainer:{
-    marginTop:30,
+  newsFeedContainer: {
+    marginTop: 30,
     // marginLeft:10,
-    paddingBottom:150,
-},
-newsText:{
-  color: '#000',
-  fontFamily: 'Alatsi',
-  fontSize: 16,
-  fontStyle: 'normal',
-  fontWeight: '400',
-    marginLeft:20,
-},
+    paddingBottom: 150,
+  },
+  newsText: {
+    color: '#000',
+    fontFamily: 'Alatsi',
+    fontSize: 16,
+    fontStyle: 'normal',
+    fontWeight: '400',
+    marginLeft: 20,
+  },
 });

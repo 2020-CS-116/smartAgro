@@ -48,7 +48,7 @@ const BuyProducts: React.FC<BuyProductsProps> = ({ navigation }) => {
             <AntDesign name='arrowleft' size={23} style={styles.icon} onPress={() => navigation.goBack()} />
           </View>
           <View>
-            <Text style={styles.smartText}> Pesticides </Text>
+            <Text style={styles.smartText}> Agro Yeilds </Text>
           </View>
         </View>
         <View>
@@ -72,7 +72,7 @@ const BuyProducts: React.FC<BuyProductsProps> = ({ navigation }) => {
             return <>
               <View style={styles.card} key={index}>
                 <TouchableOpacity style={styles.img_container} onPress={handleImage}>
-                <Image source={require('../../../assets/pro_3.jpg')}  style={{resizeMode: 'contain' , width: '90%' , height: '90%'}} />
+                <Image source={require('../../../assets/h_img3.jpg')}  style={{resizeMode: 'contain' , width: '90%' , height: '90%'}} />
                 </TouchableOpacity>
                 <View style={styles.detils_container}>
                   <Text style= {{color: '#000' , fontWeight: 'bold', fontSize: 18}}> Artal </Text>
