@@ -145,7 +145,7 @@ const Login: React.FC<LoginProps> = (props) => {
             </Text>
             {
               loading ? (<ActivityIndicator size="large" color="#0000ff" />) : <TouchableOpacity style={styles.button} onPress={handleSignIn}>
-                <Text style={styles.buttonText}>Log in</Text>
+                <Text style={styles.buttonText}>Log in Button </Text>
               </TouchableOpacity>
             }
 
